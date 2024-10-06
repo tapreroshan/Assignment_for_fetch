@@ -1,7 +1,7 @@
-document.getElementById("btn").addEventListener("click",fetch_user);
+document.getElementById("btn").addEventListener("click",fetch_user);      // adding event listner function to to the buttton
 
 
-async function fetch_user() {
+async function fetch_user() {                                                               // function for fetching data
       const url ="https://reqres.in/api/users?page=2";
       const response = await fetch(url) ;
       const data = await response.json() ;
@@ -9,7 +9,7 @@ async function fetch_user() {
       display(data.data)
 }
 
-function display(users){
+function display(users){                                                            // to display user data
     let container = document.querySelector(".user_container");
     container.innerHTML = ''
 
