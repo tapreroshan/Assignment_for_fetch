@@ -2,20 +2,20 @@ document.getElementById('get-category-data').addEventListener('click', getCatego
 document.getElementById('get-ingredient-data').addEventListener('click', getIngredientData);
 
 async function getCategoriesData() {
-    const url = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood';
+    const url = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood';// fetching data
     try {
         const response = await fetch(url);
         
         const data = await response.json();
         console.log(data);
         displayData(data, 'category')
-    } catch (error) {
+    } catch (error) {                                    // error handling
         console.error('Something went wrong:', error);
         console.log('something went wrong');
     }
 }
 
-async function getIngredientData() {
+async function getIngredientData() {                      // getingredient function
     const url = 'https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast';
     try {
         const response = await fetch(url);
@@ -28,7 +28,8 @@ async function getIngredientData() {
         console.log('something went wrong');
     }
 }
-function displayData(data, elementId) {
+function displayData(data, elementId) {                         // display function
+    
     const container = document.getElementById(elementId);
     container.innerHTML = ''; 
 
